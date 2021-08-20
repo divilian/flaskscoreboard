@@ -26,15 +26,27 @@ def student_scoreboard():
     levels = np.array([], dtype='object')
     images = np.array([], dtype='object')
     grades = np.array([], dtype='object')
+    most_recents = np.array([], dtype='object')
+
     for row in students.itertuples():
+
         level, image, grade = get_level(row.total)
         levels = np.append(levels, level)
         images = np.append(images, image)
         grades = np.append(grades, grade)
 
+        most_recent_tag = db.execute(
+            """
+            select tag from xp where username=?
+            order by thetime desc
+            limit 1
+            """, (row.username,)).fetchone()
+        most_recents = np.append(most_recents, most_recent_tag['tag'])
+
     students['level'] = levels
     students['image'] = images
     students['grade'] = grades
+    students['most_recent'] = most_recents
     
     return render_template("student_scoreboard.html",students=students,
         title="Student view")
