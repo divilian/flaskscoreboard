@@ -15,8 +15,7 @@ def create_app():
     except OSError as e:
         print(f"Can't create inst path! {xpapp.instance_path}")
 
-    @xpapp.route('/hello')
-    def hello():
-        return "hello scoreboard!"
-
+    from . import db
+    db.init_app(xpapp)
+    
     return xpapp
