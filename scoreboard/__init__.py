@@ -18,4 +18,7 @@ def create_app():
     from . import db
     db.init_app(xpapp)
     
+    with xpapp.app_context():
+        from . import routes
+
     return xpapp
