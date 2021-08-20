@@ -10,6 +10,7 @@ def get_db():
             current_app.config['DATABASE'],
             detect_types=sqlite3.PARSE_DECLTYPES
         )
+        # Not strictly necessary since we're converting to DataFrame anyway.
         g.db.row_factory = sqlite3.Row
     return g.db
 
