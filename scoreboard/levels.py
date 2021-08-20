@@ -20,11 +20,12 @@ def get_level(xps):
     if 'levels' not in g:
         if os.path.isfile(current_app.config['LEVELS_CSV']):
             g.levels = pd.read_csv(current_app.config['LEVELS_CSV'],
-                encoding="utf-8")
+                encoding="utf-8").sort_values('minxp', ascending=False)
         else:
             print("No levels file!")
             g.levels = pd.DataFrame({"level":["Novice"], "minxp":[0],
-                "image":[""], "grade":["F"]})
+                "image":[""], "grade":["F"]}).sort_values('minxp',
+                ascending=False)
 
-    return (g.levels.iloc[0]['level'], g.levels.iloc[0]['image'],
-        g.levels.iloc[0]['grade'])
+    the_row = g.levels[xps >= g.levels.minxp].iloc[0]
+    return (the_row['level'], the_row['image'], the_row['grade'])
