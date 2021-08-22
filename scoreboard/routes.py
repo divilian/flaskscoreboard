@@ -5,11 +5,12 @@ from scoreboard.levels import get_level
 import numpy as np
 import pandas as pd
 
-@current_app.route('/sup')
-def sup():
-    return "Sup dude!"
+@current_app.route('/create')
+def create():
+    return render_template("create_account.html")
 
 @current_app.route('/')
+@current_app.route('/student')
 def student_scoreboard():
     db = get_db()
 

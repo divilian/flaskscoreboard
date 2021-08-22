@@ -20,4 +20,5 @@ db.init_app(xpapp)
 
 with xpapp.app_context():
     from . import routes
+    from . import controllers
 

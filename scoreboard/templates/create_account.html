@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <form method="post" action="{{ url_for('createAcctController') }}" >
+        <label for="username">Real name (<i>e.g.</i>, Oscar Isaac)</label>
+        <input name="username" id="username" require />
+        <label for="charname">Screen name (<i>e.g.</i>, Duke Leto Atreides)</label>
+        <input name="charname" id="charname" require />
+        <input type="submit" value="Go!" />
+    </form>
+{% endblock %}
