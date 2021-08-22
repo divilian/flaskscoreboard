@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{{ title }}</h1>
+    <table border=1 >
+    <tr><th>Student</th><th>Alias</th><th>XP</th><th>Level</th><th>Grade</th><th>Most recent experience</th><th>Date</th></tr>
+        {% for student in students.itertuples() %}
+            <tr><td>{{ student.realname }}</td>
+                <td>{{ student.username }}</td>
+                <td>{{ student.total }}</td>
+                <td>{{ student.image }} {{ student.level }}</td>
+                <td>{{ student.grade }}</td>
+                <td>{{ student.most_recent }}</td>
+                <td>{{ student.latest_time }}</td></tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+
