@@ -1,15 +1,3 @@
-{% extends 'base.html' %}
-
-{% block content %}
-    <h1>{{ title }}</h1>
-
-<div class="tab">
-  <button class="tablinks" id="levels" onclick="openTab(event, 'Levels')">Levels</button>
-  <button class="tablinks" onclick="openTab(event, 'New')">New computer
-scientist</button>
-  <button class="tablinks" onclick="openTab(event, 'MyXP')">My XP</button>
-</div>
-
 <div id="Levels" class="tabcontent">
     <table border=1 >
     <tr><th>Student</th><th>Level</th><th>XP</th><th>Most recent experience</th><th>Date</th></tr>
@@ -23,21 +11,3 @@ scientist</button>
     </table>
 </div>
 
-<div id="New" class="tabcontent">
-    <form method="post" action="{{ url_for('createAcctController') }}" >
-        <label for="username">Real name (<i>e.g.</i>, Oscar Isaac)</label>
-        <input name="username" id="username" require />
-        <label for="charname">Screen name (<i>e.g.</i>, Duke Leto Atreides)</label>
-        <input name="charname" id="charname" require />
-        <input type="submit" value="Go!" />
-    </form>
-</div>
-
-<div id="MyXP" class="tabcontent">
-    <h1><i>Coming soon!</i></h1>
-</div>
-
-<script>
-document.getElementById("levels").click();
-</script>
-{% endblock %}

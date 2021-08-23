@@ -11,7 +11,7 @@ def create():
 
 @current_app.route('/')
 @current_app.route('/student')
-def student_scoreboard():
+def student_main():
     db = get_db()
 
     db_results = db.execute(
@@ -49,8 +49,8 @@ def student_scoreboard():
     students['grade'] = grades
     students['most_recent'] = most_recents
     
-    return render_template("student_scoreboard.html",students=students,
-        title="Student view")
+    return render_template("student_main.html",students=students,
+        title=current_app.config['TITLE'])
 
 # URL is .../fac?hash=ajwerjaklerjkaejlrkj
 @current_app.route('/fac')

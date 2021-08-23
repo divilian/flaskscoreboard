@@ -22,4 +22,4 @@ def createAcctController():
     db.execute("insert into xp (username, xps, tag) values (?, ?, ?)",
         (charname,1,"Scoreboard"))
     db.commit()
-    return redirect(url_for('student_scoreboard'))
+    return redirect(url_for('student_main'))

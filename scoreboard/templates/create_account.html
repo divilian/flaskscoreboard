@@ -1,7 +1,4 @@
-{% extends 'base.html' %}
-
-{% block content %}
-    <h1>{{ title }}</h1>
+<div id="New" class="tabcontent">
     <form method="post" action="{{ url_for('createAcctController') }}" >
         <label for="username">Real name (<i>e.g.</i>, Oscar Isaac)</label>
         <input name="username" id="username" require />
@@ -9,4 +6,5 @@
         <input name="charname" id="charname" require />
         <input type="submit" value="Go!" />
     </form>
-{% endblock %}
+</div>
+
