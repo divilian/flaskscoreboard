@@ -6,7 +6,7 @@ from flask import Flask
 xpapp = Flask(__name__, instance_relative_config=True)
 xpapp.config.from_mapping(
     SECRET_KEY='dev',
-    LEVELS_CSV=os.path.join(xpapp.instance_path,"levels.csv"),
+    LEVELS_CSV=os.path.join(xpapp.instance_path,"350levels.csv"),
     DATABASE=os.path.join(xpapp.instance_path,"xp.sqlite")
 )
 
