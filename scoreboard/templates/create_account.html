@@ -1,10 +1,17 @@
 <div id="New" class="tabcontent">
+    <h2>Get on the class scoreboard!</h2>
     <form method="post" action="{{ url_for('createAcctController') }}" >
-        <label for="username">Real name (<i>e.g.</i>, Oscar Isaac)</label>
-        <input name="username" id="username" require />
-        <label for="charname">Screen name (<i>e.g.</i>, Duke Leto Atreides)</label>
-        <input name="charname" id="charname" require />
-        <input type="submit" value="Go!" />
+        <div style="margin-bottom:15px;">
+            <label for="username">Real name (<i>e.g.</i>, Oscar Isaac)</label>
+            <input name="username" id="username" require />
+        </div>
+        <div style="margin-bottom:15px;">
+            <label for="charname">Screen name (<i>e.g.</i>, Duke Leto Atreides)</label>
+            <input name="charname" id="charname" require />
+        </div>
+        <div>
+            <input type="submit" value="Get on the board!" />
+        </div>
     </form>
 </div>
 
