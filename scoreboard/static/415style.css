@@ -1,6 +1,6 @@
 
 body {
-    background: #020a16 url(http://stephendavies.org/cpsc350/wp-content/themes/dirty-blue/img/bg.jpg) center top no-repeat;
+    background: #002000 center top no-repeat;
 }
 div.tab {
     font-size:14pt;
@@ -20,7 +20,7 @@ tr th {
     font-weight:bold;
 }
 tr td, label {
-    color:#bcbcff;
+    color:#dcffdc;
     font-weight:normal;
 }
 .tab {
@@ -46,4 +46,4 @@ tr td, label {
 td.XP {
     text-align:center;
 }
-h1 { color:white; }
+h1 { color:yellow; }
