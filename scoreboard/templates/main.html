@@ -10,7 +10,11 @@ scientist</button>
   <button class="tablinks" onclick="openTab(event, 'MyXP')">My XP</button>
 </div>
 
+{% if role == "student" %}
 {% include 'student_scoreboard.html' %}
+{% else %}
+{% include 'faculty_scoreboard.html' %}
+{% endif %}
 {% include 'create_account.html' %}
 {% include 'my_xp.html' %}
 
