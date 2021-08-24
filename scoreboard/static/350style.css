@@ -1,0 +1,49 @@
+
+body {
+    background: #020a16 url(img/bg.jpg) center top no-repeat;
+}
+div.tab {
+    font-size:14pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#fff;
+    background:url(http://stephendavies.org/cpsc350/wp-content/themes/dirty-blue/img/nav.png) left top repeat-x;
+}
+
+tr td, tr th {
+    font-size:14pt;
+    line-height:20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding:12px;
+}
+tr th {
+    color:#eee;
+    font-weight:bold;
+}
+tr td {
+    color:#bcbcff;
+    font-weight:normal;
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: yellow;
+}
+.tab button {
+  background-color: #777;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.tab button:hover {
+  background-color: #ddd;
+}
+.tab button.active {
+  background-color: white;
+}
+td.XP {
+    text-align:center;
+}
+h1 { color:white; }

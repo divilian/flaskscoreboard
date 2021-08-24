@@ -50,7 +50,9 @@ def student_main():
     students['most_recent'] = most_recents
     
     return render_template("student_main.html",students=students,
-        title=current_app.config['TITLE'])
+        title=current_app.config['TITLE'],
+        stylefilename=current_app.config['STYLE_FILENAME'],
+        url_base=current_app.config['URL_BASE'])
 
 # URL is .../fac?hash=ajwerjaklerjkaejlrkj
 @current_app.route('/fac')
