@@ -1,4 +1,6 @@
 div#Levels table tr td img {
     vertical-align:middle;
-    width:60px;
+    width:40px;
 }
+
+a { text-decoration:none; }
