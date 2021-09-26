@@ -19,6 +19,15 @@ def main():
     else:
         role = "student"
 
+    return render_template("main.html",students=getStudentList(),
+        title=current_app.config['TITLE'],
+        stylefilename=current_app.config['STYLE_FILENAME'],
+        url_base=current_app.config['URL_BASE'],
+        role=role)
+
+
+def getStudentList():
+    db = get_db()
     db_results = db.execute(
         """
         select realname, username, sum(xps) as total,
@@ -54,9 +63,31 @@ def main():
     students['image'] = images
     students['grade'] = grades
     students['most_recent'] = most_recents
-    
-    return render_template("main.html",students=students,
-        title=current_app.config['TITLE'],
-        stylefilename=current_app.config['STYLE_FILENAME'],
-        url_base=current_app.config['URL_BASE'],
-        role=role)
+    return students
+
+
+@current_app.route('/myxp', methods=['GET','POST'])
+def myxp():
+
+    print(f"it's {request.method}")
+    if request.method == 'GET':
+        return render_template("my_xp_challenge.html")
+    else:
+        db = get_db()
+        db_results = db.execute(
+            """
+            select realname, charname from chars
+            where realname=? and charname=?
+            """,
+            (request.form['username'], request.form['charname'])).fetchone()
+        if db_results:
+            return render_template("my_xp.html")
+        else:
+            return render_template("main.html",students=getStudentList(),
+                opentab='myxp',
+                error=f"No such student {request.form['username']} with " +
+                    f"screen name {request.form['charname']}",
+                title=current_app.config['TITLE'],
+                stylefilename=current_app.config['STYLE_FILENAME'],
+                url_base=current_app.config['URL_BASE'],
+                role="student")

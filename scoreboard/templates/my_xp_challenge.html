@@ -1,0 +1,16 @@
+<div id="MyXP" class="tabcontent">
+    <p style="color:red;font-weight:bold;">{{ error }}</p>
+    <h2>Enter your full name and screen name:</h2>
+    <form method="post" action="{{ url_for('myxp') }}" >
+        <div style="margin-bottom:15px;">
+            <label for="username">Real name</label>
+            <input name="username" id="username" require />
+        </div>
+        <div style="margin-bottom:15px;">
+            <label for="charname">Screen name</label>
+            <input name="charname" id="charname" require />
+        </div>
+        <input type="submit" value="Show XP" />
+    </form>
+</div>
+

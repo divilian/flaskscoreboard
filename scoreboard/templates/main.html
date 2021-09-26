@@ -7,7 +7,7 @@
   <button class="tablinks" id="levels" onclick="openTab(event, 'Levels')">Levels</button>
   <button class="tablinks" onclick="openTab(event, 'New')">New computer
 scientist</button>
-  <button class="tablinks" onclick="openTab(event, 'MyXP')">My XP</button>
+  <button class="tablinks" id="myxp" onclick="openTab(event, 'MyXP')">My XP</button>
 </div>
 
 {% if role == "student" %}
@@ -16,9 +16,13 @@ scientist</button>
 {% include 'faculty_scoreboard.html' %}
 {% endif %}
 {% include 'create_account.html' %}
-{% include 'my_xp.html' %}
+{% include 'my_xp_challenge.html' %}
 
 <script>
+{% if opentab == "myxp" %}
+document.getElementById("myxp").click();
+{% else %}
 document.getElementById("levels").click();
+{% endif %}
 </script>
 {% endblock %}
