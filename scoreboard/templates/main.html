@@ -15,8 +15,14 @@ scientist</button>
 {% else %}
 {% include 'faculty_scoreboard.html' %}
 {% endif %}
+
 {% include 'create_account.html' %}
+
+{% if challenge == "yes" %}
 {% include 'my_xp_challenge.html' %}
+{% else %}
+{% include 'my_xp.html' %}
+{% endif %}
 
 <script>
 {% if opentab == "myxp" %}

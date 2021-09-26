@@ -23,7 +23,7 @@ def main():
         title=current_app.config['TITLE'],
         stylefilename=current_app.config['STYLE_FILENAME'],
         url_base=current_app.config['URL_BASE'],
-        role=role)
+        challenge="yes", role=role)
 
 
 def getStudentList():
@@ -71,6 +71,8 @@ def myxp():
 
     db = get_db()
     if request.method == 'GET':
+        print("AAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHH!")
+        import sys ; sys.exit()
         return render_template("my_xp_challenge.html")
     else:
         db_challenge_check = db.execute(
@@ -87,14 +89,17 @@ def myxp():
                 """,
                 (request.form['charname'],)).fetchall()
             xpEntries = pd.DataFrame(db_results)
-            import ipdb; ipdb.set_trace()
             xpEntries.columns = ['xps','tag','thetime']
-            return render_template("my_xp.html",
+            return render_template("main.html",students=getStudentList(),
+                opentab='myxp', challenge="no",
                 screenname=request.form['charname'],
-                xpEntries=xpEntries)
+                title=current_app.config['TITLE'],
+                stylefilename=current_app.config['STYLE_FILENAME'],
+                url_base=current_app.config['URL_BASE'],
+                role="student", xpEntries=xpEntries)
         else:
             return render_template("main.html",students=getStudentList(),
-                opentab='myxp',
+                opentab='myxp', challenge="yes",
                 error=f"No such student {request.form['username']} with " +
                     f"screen name {request.form['charname']}",
                 title=current_app.config['TITLE'],
