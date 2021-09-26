@@ -1,4 +1,12 @@
 <div id="MyXP" class="tabcontent">
-    <h1><i>Your XP will appear here!</i></h1>
+    <h1>XP for {{ screenname }}</h1>
+    <table border=1 >
+    <tr><th>Experience</th><th>XP</th><th>Date</th></tr>
+        {% for xpEntry in xpEntries.itertuples() %}
+            <tr><td>{{ xpEntry.tag }}</td>
+                <td class="XP">{{ xpEntry.xps }}</td>
+                <td>{{ xpEntry.thetime }}</td></tr>
+        {% endfor %}
+    </table>
 </div>
 

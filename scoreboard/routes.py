@@ -69,19 +69,29 @@ def getStudentList():
 @current_app.route('/myxp', methods=['GET','POST'])
 def myxp():
 
-    print(f"it's {request.method}")
+    db = get_db()
     if request.method == 'GET':
         return render_template("my_xp_challenge.html")
     else:
-        db = get_db()
-        db_results = db.execute(
+        db_challenge_check = db.execute(
             """
             select realname, charname from chars
             where realname=? and charname=?
             """,
             (request.form['username'], request.form['charname'])).fetchone()
-        if db_results:
-            return render_template("my_xp.html")
+        if db_challenge_check:
+            db_results = db.execute(
+                """
+                select xps, tag, thetime from xp where username=?
+                order by thetime
+                """,
+                (request.form['charname'],)).fetchall()
+            xpEntries = pd.DataFrame(db_results)
+            import ipdb; ipdb.set_trace()
+            xpEntries.columns = ['xps','tag','thetime']
+            return render_template("my_xp.html",
+                screenname=request.form['charname'],
+                xpEntries=xpEntries)
         else:
             return render_template("main.html",students=getStudentList(),
                 opentab='myxp',
