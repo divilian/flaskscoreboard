@@ -4,7 +4,6 @@ import click
 from flask import current_app, g
 from flask.cli import with_appcontext
 
-
 # For a given number of XP, return a tuple with the name, image URL, and grade
 # corresponding to the highest level it achieves.
 def get_level(xps):
