@@ -22,18 +22,18 @@ def prompt(conn):
         if len(matches) == 1:
             return matches[0][0], matches[0][1]
         else:
-            print(f"Sorry, {len(matches)} matches for '{p}'.")
+            print(f"\nSorry, {len(matches)} matches for '{p}'.\n")
 
 
 
 tag = input("Enter tag (for all students): ")
 charname, realname = prompt(conn)
 while charname != "done":
-    pts = int(input(f"XP for {realname}: "))
+    pts = int(input(f"    XP for {realname}: "))
     conn.execute("""
         insert into xp (username, xps, tag) values
         (?,?,?)
         """, (charname, pts, tag))
     conn.commit()
-    print(f"...supposedly entered {pts} points for {charname}...")
+    print(f"    ...supposedly entered {pts} points for {charname}...")
     charname, realname = prompt(conn)
