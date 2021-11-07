@@ -1,6 +1,28 @@
 level,image,grade,minxp
-Agent Smith,agentsmith.jpg,A+,100
-Dolores,dolores.jpg,D-,10
-Rosie the Maid,rosie.jpg,F,5
-Power droid,power.jpg,F,2
+Agent Smith,agentsmith.png,A+,650
+Ava,ava.png,A,600
+Ash,ash.png,A-,560
+BB-8,bb8.png,B+,530
+Bishop,bishop.png,B,500
+Baymax,baymax.png,B-,470
+C-3PO,c3po.png,C+,440
+Cortana,cortana.png,C,420
+Cylon,cylon.png,C-,400
+R2-D2,r2d2.png,D+,380
+Data,data.png,D,360
+Dolores,dolores.png,D-,340
+Terminator T-101,terminator.png,F,320
+HAL-9000,hal9000.png,F,300
+Ultron,ultron.png,F,280
+Maeve,maeve.png,F,260
+K-2SO,k2so.png,F,240
+#6,number6.png,F,220
+TARS,tars.png,F,200
+J.A.R.V.I.S.,jarvis.png,F,175
+Rachael,rachael.png,F,150
+L3-37,l337.png,F,125
+Eve,eve.png,F,100
+Wall-E,walle.png,F,75
+Rosie the Maid,rosie.png,F,50
+Power droid,power.png,F,25
 Dead battery,dead.png,F,0
