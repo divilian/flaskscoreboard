@@ -1,0 +1,27 @@
+level,image,grade,minxp
+William Shakespeare,shakespeare.jpg,A+,550
+Homer,homer.jpg,A,500
+Fyodor Dostoevsky,dostoevsky.jpg,A-,450
+Charlotte Bronte,charlotte.jpg,B+,400
+Leo Tolstoy,tolstoy.jpg,B,375
+Sophocles,sophocles.jpeg,B-,350
+Jane Austen,austen.jpg,C+,330
+Toni Morrison,morrison.jpg,C,310
+Emily Dickinson,dickinson.jpg,C-,290
+Geoffrey Chaucer,chaucer.jpeg,D+,270
+Charles Dickens,dickens.jpg,D,250
+George Eliot,eliot.png,D-,230
+Isaac Asimov,asimov.jpg,F,210
+C.S. Lewis,lewis.jpeg,F,190
+George Orwell,orwell.jpg,F,170
+Virginia Woolf,woolf.jpg,F,150
+Ursula Le Guin,ursula.jpg,F,130
+J.R.R. Tolkien,tolkien.jpg,F,110
+Mary Shelley,shelley.png,F,90
+Mark Twain,twain.png,F,75
+Lewis Carroll,carroll.jpg,F,60
+Agatha Christie,christie.jpg,F,45
+Sir Arthur Conan Doyle,doyle.jpg,F,30
+E.L. James,james.jpg,F,20
+Edward Bulwer-Lytton,lytton.jpg,F,10
+Zerna Addis Sharpe,zerna.jpg,F,0

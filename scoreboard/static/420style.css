@@ -1,0 +1,57 @@
+
+body {
+    /*background: #020a16 url(http://stephendavies.org/data420/wp-content/themes/dirty-blue/img/bg.jpg), url(http://stephendavies.org/data420/wp-content/themes/dirty-blue/img/backgroundflip.jpg) center top repeat;*/
+    background-image: url(http://stephendavies.org/data420/backgroundflip.jpg);
+    background-size: cover;
+}
+div.tab {
+    font-size:14pt;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#fff;
+    background:url(http://stephendavies.org/data420/wp-content/themes/dirty-blue/img/nav.png) left top repeat-x;
+}
+
+tr td, tr th {
+    font-size:14pt;
+    line-height:20px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    padding:4px 12px 4px 8px;
+}
+tr th {
+    /* color:#189ab4; */
+    color:black;
+    font-weight:bold;
+}
+tr td, label {
+    /* color:#05445e; */
+    color:black;
+    font-weight:normal;
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: yellow;
+}
+.tab button {
+  background-color: #189ab4;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.tab button:hover {
+  background-color: #d4f1f4;
+}
+.tab button.active {
+  background-color: orange;
+}
+td.XP {
+    text-align:center;
+}
+h1, h2 { color:#05445e; }
+a { color:#05445e; }
+
+img { height:40px; }
+
