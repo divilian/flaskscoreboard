@@ -23,6 +23,7 @@ def main():
 
     return render_template("main.html",students=getStudentList(),
         title=current_app.config['TITLE'],
+        faviconfilename=current_app.config['FAVICON_FILENAME'],
         stylefilename=current_app.config['STYLE_FILENAME'],
         url_base=current_app.config['URL_BASE'],
         challenge="yes", role=role)
