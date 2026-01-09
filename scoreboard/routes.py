@@ -5,7 +5,7 @@ from scoreboard.levels import get_level
 import numpy as np
 import pandas as pd
 
-from flask import send_from_directory
+from . import xpapp
 
 @xpapp.route('/')
 def main():
