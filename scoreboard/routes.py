@@ -5,7 +5,9 @@ from scoreboard.levels import get_level
 import numpy as np
 import pandas as pd
 
-@current_app.route('/')
+from flask import send_from_directory
+
+@xpapp.route('/')
 def main():
 
     db = get_db()
@@ -66,7 +68,7 @@ def getStudentList():
     return students
 
 
-@current_app.route('/myxp', methods=['GET','POST'])
+@xpapp.route('/myxp', methods=['GET','POST'])
 def myxp():
 
     db = get_db()
