@@ -16,7 +16,7 @@ if not os.path.exists(filename):
 
 conn = sqlite3.connect(dbfile)
 
-scores = pd.read_csv(filename)
+scores = pd.read_csv(filename,header=None)
 
 def charNameFor(conn, realname):
     matches = [ m for m in conn.execute(f"""
